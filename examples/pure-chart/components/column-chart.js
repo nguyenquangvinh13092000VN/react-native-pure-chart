@@ -104,7 +104,8 @@ export default class ColumnChart extends Component {
         tooltipRenders.push(
           <View key={'tooltipText-' + i} style={{flexDirection: 'row', paddingLeft: 5, alignItems: 'center'}}>
             <View style={[styles.tooltipColor, {backgroundColor: !series.seriesColor ? this.props.primaryColor : series.seriesColor}]} />
-            <Text style={styles.tooltipValue}>{numberWithCommas(series.data[selectedIndex]['y'], false)}</Text>
+            <Text style={styles.tooltipValue}>{numberWithCommas(series.data[selectedIndex]['y'], false )}</Text>
+           
           </View>
         )
       }
@@ -112,6 +113,7 @@ export default class ColumnChart extends Component {
         <View style={[styles.tooltipWrapper, { left: left }]}>
           <View style={styles.tooltip}>
             {tooltipRenders}
+            <Text style={[styles.tooltipValue,{textAlign:'center',fontSize:12}]}>{(this.props.unit==="km")?"km":"chuyến"}</Text>
           </View>
         </View>
       )
@@ -207,9 +209,9 @@ ColumnChart.propTypes = {
 ColumnChart.defaultProps = {
   data: [],
   height: 100,
-  defaultColumnWidth: 40,
-  defaultColumnMargin: 20,
+  defaultColumnWidth: 20,
+  defaultColumnMargin: 7,
   primaryColor: '#297AB1',
   highlightColor: 'red',
-  showEvenNumberXaxisLabel: true
+
 }
