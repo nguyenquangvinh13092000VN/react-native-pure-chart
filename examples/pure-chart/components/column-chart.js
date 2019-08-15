@@ -209,8 +209,8 @@ ColumnChart.propTypes = {
 ColumnChart.defaultProps = {
   data: [],
   height: 100,
-  defaultColumnWidth: 20,
-  defaultColumnMargin: 7,
+  defaultColumnWidth: 17,
+  defaultColumnMargin: 14,
   primaryColor: '#297AB1',
   highlightColor: 'red',
 
